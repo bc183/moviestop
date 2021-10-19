@@ -2,6 +2,8 @@
 
 https://moviesstop.herokuapp.com/
 
+This app uses environment variables. So, please create a .env file and put the necessary variables in there. for example, api_key=your_api_key
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
