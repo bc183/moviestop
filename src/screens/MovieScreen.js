@@ -8,7 +8,6 @@ import Message from '../components/Message';
 import Breadcrumb from '../components/Breadcrumb';
 
 export default function MovieScreen({ match }) {
-    console.log(match);
     const [movie, setMovie] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
