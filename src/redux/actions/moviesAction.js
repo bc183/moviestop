@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_KEY } from '../../constants';
+import { API_KEY, API_URL } from '../../constants';
 import { MOVIES_LIST_FAIL, MOVIES_LIST_REQUEST, MOVIES_LIST_SUCCESS, MOVIES_LIKE_SUCCESS, MOVIES_LIKE_REQUEST, MOVIES_LIKE_FAIL } from '../constants/moviesConstants';
 
 
@@ -17,7 +17,7 @@ export const getPopularMoviesList = (page = 1) => async (dispatch, getState) => 
     try {
         dispatch({ type:  MOVIES_LIST_REQUEST});
         const { likedMovies } = getState().moviesList;
-        const { data } = await axios.get(`/movie/popular?api_key=${API_KEY}&page=${page}`);
+        const { data } = await axios.get(`${API_URL}/movie/popular?api_key=${API_KEY}&page=${page}`);
         data.results.forEach(movie => {
             const present = isPresent(likedMovies, movie.id);
             if (present) {

@@ -2,7 +2,7 @@ import { Container, Grid, Typography, ImageList, ImageListItem } from '@mui/mate
 import Image from 'material-ui-image'
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { API_KEY, IMAGE_WIDTH_ORIGINAL } from '../constants';
+import { API_KEY, API_URL, IMAGE_WIDTH_ORIGINAL } from '../constants';
 import Loading from '../components/Loading';
 import Message from '../components/Message';
 import Breadcrumb from '../components/Breadcrumb';
@@ -25,7 +25,7 @@ export default function MovieScreen({ match }) {
         setLoading(true);
         const getMovieDetails = async () => {
             try {
-                const { data } = await axios.get(`${match.url}?api_key=${API_KEY}`);
+                const { data } = await axios.get(`${API_URL}/${match.url}?api_key=${API_KEY}`);
                 setMovie(data);
                 setLoading(false);
              } catch (error) {

@@ -1,7 +1,6 @@
 {
   "name": "moviesstop",
   "version": "0.1.0",
-  "proxy": "https://api.themoviedb.org/3",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.5.0",
